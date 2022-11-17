@@ -1,0 +1,150 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Rubik', sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+
+:root {
+    --Very-DarkGray: hsl(0, 0%, 17%);
+    --Dark-Gray: hsl(0, 0%, 59%);
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+}
+
+.top {
+    background-image: url("/images/pattern-bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+    height: 35vh;
+    padding-top: 30px;
+    position: relative;
+}
+
+.head{
+    color: white;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.input-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+input:focus {
+    outline: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input {
+    height: 3rem;
+    width: 20rem;
+    border-radius: 8px 0 0 8px;
+    border: none;
+    padding: 0 0.7rem;
+}
+
+button {
+    height: 3rem;
+    width: 2rem;
+    border-radius: 0 8px 8px 0;
+    border: none;
+    background-color: var(--Very-DarkGray);
+    cursor: pointer;
+}
+img {
+    width: 7px;
+}
+
+.info-container {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    min-width: 70vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 1rem 1.5rem;
+    z-index: 99;
+}
+
+.info-container p {
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.info:not(:last-child) {
+    /* outline: 2px solid #CCC; */
+    border-right: 1px solid var(--Dark-Gray);
+}
+
+.info:not(:first-child) {
+    padding: 0 2rem;
+}
+
+h2 {
+    font-size: 18px;
+    font-weight: 700;
+    padding-top: 8px;
+}
+
+.bottom {
+    position: relative;
+    z-index: -20;
+}
+.map {
+    height: 65vh;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    .info-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        text-align: center;
+        /* bottom: -130%; */
+    }
+
+    .info:not(:last-child) {
+        /* outline: 2px solid #CCC; */
+        border-right: none;
+    }
+
+    .input-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .info {
+        margin-bottom: 1rem;
+    }
+}
+@media only screen and (max-width: 380px) {
+    .info-container {
+        top: 120%;
+    }
+}
